@@ -22,7 +22,7 @@ harga_per_gol = [20_000,30_000,40_000,50_000,60_000] # Harga per golongan
 
 # Perhitungan harga total
 tol_diff = abs(ruas_tol.index(tujuan_pengguna) - ruas_tol.index(asal_pengguna)) # "Selisih" ruas tol yang akan ditempuh
-harga_total = max(tol_diff + 1, 1) * harga_per_gol[gol_pengguna - 1] # Harga yang harus dibayar (bayar pas masuk + keluar)
+harga_total = max(tol_diff + 1, 1) * harga_per_gol[gol_pengguna - 1] # Harga yang harus dibayar (bayar pas masuk + keluar [jika beda ruas])
 
 saldo_cukup = False # Apakah saldo cukup
 
