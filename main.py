@@ -3,16 +3,8 @@ gol = [1,2,3,4,5] # Golongan kendaraan
 
 gol_pengguna = int(input("\nMasukkan golongan kendaraan\n(1, 2, 3, 4, 5): ")) # Golongan kendaraan pengguna
 
-gol_boleh_masuk = False # Apakah kendaraan boleh masuk
-
 # Mengecek golongan kendaraan pengguna
-for golongan in gol:
-    if gol_pengguna == golongan:
-        gol_boleh_masuk = True
-        break
-
-# Kendaraan pengguna tidak boleh masuk tol jika bukan golongan yang boleh masuk
-if not gol_boleh_masuk:
+if gol_pengguna not in gol:
     print("\nKendaraan tidak boleh masuk tol.\n\n")
     exit()
 
@@ -21,21 +13,8 @@ ruas_tol = ["Surabaya", "Semarang", "Bandung", "Jakarta"] # Ruas tol (misalkan a
 asal_pengguna = input("\nMasukkan ruas tol asal\n(Surabaya, Semarang, Bandung, Jakarta): ") # Ruas tempat pengguna masuk
 tujuan_pengguna = input("\nMasukkan ruas tol tujuan\n(Surabaya, Semarang, Bandung, Jakarta): ") # Ruas tempat pengguna keluar
 
-daerah_ada_tol = False # Apakah ruas tol ada
-
 # Mengecek apakah ruas tol masuk dan keluar ada
-for asal in ruas_tol:
-    if asal_pengguna == asal:
-        daerah_ada_tol = True
-        break
-
-for tujuan in ruas_tol:
-    if tujuan_pengguna == tujuan:
-        daerah_ada_tol = True
-        break
-
-# Tidak bisa pake tol kalau ruas tol belum ada
-if not daerah_ada_tol:
+if asal_pengguna not in ruas_tol or tujuan_pengguna not in ruas_tol:
     print("\nBelum ada tol di daerah-daerah tersebut.\n\n")
     exit()
 
